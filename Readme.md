@@ -43,3 +43,14 @@ options:
   -lg GAP_AFTER_V_CHANNEL, --gap_after_V_channel GAP_AFTER_V_CHANNEL
                         Gap between edge of voltage leads and beginning of fanning out of the main channel to current pad.
 ```
+
+So if you want a 20um x 100um Hall bar with 5um wide voltage leads in a 1mm^2 area, simply do:
+```
+python .\DXFmakerHB.py -w 20 -l 100 -wv 5 -b 1000
+```
+
+The result then looks like this:
+
+![alt text](ExampleHB.png "Title")
+
+When you convert the file in the laser writer, make sure to turn on the XOR option, as this will correctly expose the area between the bounding box and the Hall bar for etching. If you plan to use liftoff, simply delete the bounding box.
